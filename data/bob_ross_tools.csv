@@ -1,0 +1,13 @@
+Tool_ID,Tool_Name,Category,Primary_Uses,Compatible_Colors,Associated_Subjects,Episodes_Used,Technique_References
+TL001,2-Inch Brush,Brush,"Skies, Water, Large areas","Titanium White, Prussian Blue","Skies, Water, Backgrounds","E001, E004, E007, E019","T004, T007"
+TL002,1-Inch Brush,Brush,"Mountains, Grounds","Dark Sienna, Van Dyke Brown","Mountains, Paths, Ground","E003, E008, E014","T002, T005"
+TL003,Fan Brush,Brush,"Evergreen trees, Grass","Sap Green, Phthalo Green","Evergreen trees, Grass","E002, E006, E028","T003"
+TL004,Round Brush,Brush,"Deciduous trees, Details","Sap Green, Yellow Ochre, Alizarin Crimson","Leafy trees, Bushes, Details","E017, E021, E026","T009"
+TL005,Script Liner,Brush,"Branches, Fine details","Van Dyke Brown, Midnight Black","Tree branches, Grass blades","E011, E020, E025","T008"
+TL006,Palette Knife,Knife,"Mountains, Rocks, Texture","Dark Sienna, Prussian Blue, Titanium White","Mountains, Rocks, Ice","E003, E015, E031","T002"
+TL007,Painting Knife,Knife,"Mountains, Highlights","Titanium White, Cadmium Yellow","Mountain peaks, Snow","E013, E022","T008"
+TL008,#8 Bristle Brush,Brush,"Blending, Soft edges","All colors","Transitions, Soft areas","E005, E009, E016","T001, T006"
+TL009,Oval Brush,Brush,"Water, Reflections","Prussian Blue, Phthalo Green","Water, Reflections","E009, E024, E030","T006"
+TL010,Beating Brush,Brush,"Splatter effects","Indian Yellow, Alizarin Crimson","Flowers, Distant foliage","E018, E029","T010"
+TL011,Liquid White,Medium,"Base coat, Wet-on-wet base","Titanium White (liquid)","All (base layer)","E001-E031","T004"
+TL012,Linseed Oil,Medium,"Paint thinning, Glazing","Compatible with all oils","All subjects","E010, E023, E027","T001, T007"

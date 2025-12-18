@@ -1,0 +1,11 @@
+Technique_ID,Technique_Name,Description,Primary_Colors_Used,Common_Subjects,Episodes_Featured,Difficulty_Level
+T001,Wet-on-Wet,"Applying wet paint onto wet paint for soft blending","Titanium White, Midnight Black, Prussian Blue","Mountains, Skies, Water","E001, E005, E012, E023",Beginner
+T002,Almighty Knife,"Using palette knife for mountains/hard edges","Dark Sienna, Van Dyke Brown, Cadmium Yellow","Mountains, Rocks, Tree trunks","E003, E008, E015, E031",Intermediate
+T003,Happy Little Trees,"Fan brush technique for evergreen trees","Sap Green, Phthalo Green, Van Dyke Brown","Evergreen trees, Forests","E002, E006, E011, E028",Beginner
+T004,Magic White,"Base coat of liquid white for wet-on-wet","Titanium White (liquid)","Skies, Water reflections","E001-E031",Beginner
+T005,Floating Mountains,"Creating distant, hazy mountain ranges","Titanium White, Prussian Blue, Alizarin Crimson","Distant mountains, Backgrounds","E007, E014, E022",Intermediate
+T006,Reflections,"Mirroring elements in water","Prussian Blue, Phthalo Green, Van Dyke Brown","Lakes, Rivers, Water scenes","E009, E016, E024, E030",Intermediate
+T007,Clouds & Sky Blending,"Two-inch brush sky techniques","Titanium White, Prussian Blue, Alizarin Crimson","Clouds, Sunsets, Skies","E004, E010, E019, E027",Beginner
+T008,Highlights,"Adding light accents to elements","Cadmium Yellow, Yellow Ochre, Titanium White","Tree tops, Mountain peaks","E013, E020, E025",Intermediate
+T009,Deciduous Trees,"Round brush technique for leafy trees","Sap Green, Yellow Ochre, Dark Sienna","Oak trees, Bushes, Foliage","E017, E021, E026, E029",Intermediate
+T010,Splatter Painting,"Shaking brush for distant foliage/flowers","Indian Yellow, Alizarin Crimson, Sap Green","Flowers, Distant foliage","E018, E029, E031",Advanced
