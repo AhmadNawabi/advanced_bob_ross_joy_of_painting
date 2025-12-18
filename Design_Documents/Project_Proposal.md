@@ -49,10 +49,10 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
 | **Testing** | `unittest`, Postman | Lightweight, covers critical paths |
 | **Docs** | Mermaid (GitHub-native), Swagger UI (stretch) | Visual, collaborative, no external tools |
 
-> 💡 **Team Roles (3 People)**  
+> 💡 **Team Roles (1 People)**  
 > - **Team Member 1**: Database + ETL (`seed_database.py`, schema design)  
-> - **Team Member 2**: API + Auth + Pagination (`app.py`, `auth.py`, `pagination.py`)  
-> - **Team Member 3**: Frontend + Testing + Docs (`index.html`, `script.js`, tests, README)
+> - **Team Member 1**: API + Auth + Pagination (`app.py`, `auth.py`, `pagination.py`)  
+> - **Team Member 1**: Frontend + Testing + Docs (`index.html`, `script.js`, tests, README)
 
 ---
 
@@ -125,8 +125,9 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
 }
 ```
 🗃️ 5. Database Documentation (UML)
-```mermaid
 
+```mermaid
+erDiagram
     Episode ||--o{ EpisodeColor : contains
     Episode ||--o{ EpisodeSubject : features
     Episode ||--o{ EpisodeTool : uses
@@ -138,7 +139,7 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
     Tool }|--|| Technique : enables
 
     Episode {
-        INT id PK
+        INT id PK "S1E1 → id=1"
         VARCHAR title
         INT season_number
         INT episode_number
@@ -149,30 +150,53 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
     
     Color {
         INT id PK
-        VARCHAR name
-        CHAR hex_code
+        VARCHAR name "e.g., Alizarin Crimson"
+        CHAR hex_code "#RRGGBB"
     }
     
     SubjectMatter {
         INT id PK
-        VARCHAR name
+        VARCHAR name "e.g., Mountain, Cabin"
     }
     
     Tool {
-        VARCHAR(10) id PK
-        VARCHAR name
-        VARCHAR category
+        VARCHAR(10) id PK "e.g., TL001"
+        VARCHAR name "e.g., 2-Inch Brush"
+        VARCHAR category "Brush / Knife / Medium"
         TEXT primary_uses
         TEXT compatible_colors
     }
     
     Technique {
-        VARCHAR(10) id PK
-        VARCHAR name
+        VARCHAR(10) id PK "e.g., T004"
+        VARCHAR name "e.g., Wet-on-Wet"
         TEXT description
-        VARCHAR difficulty_level
+        VARCHAR difficulty_level "Beginner / Intermediate / Advanced"
     }
 ```
+
+**Key Relationships:**  
+- 5-way filtering: Month, Color, Subject, Tool, Technique  
+- AND/OR logic supported  
+- Preserved IDs for authenticity  
+- Fully normalized (0% duplicate data)  
+
+**Data Stats:**
+
+| Table | Rows | Purpose |
+|-------|------|---------|
+| Episode | 403 | Metadata for each painting episode |
+| Color | 18 | All paint colors used in the series |
+| SubjectMatter | 70+ | Subject tags (e.g., Tree, Ocean) |
+| Tool | 12 | Brushes, knives, mediums |
+| Technique | 10 | Painting methods |
+| EpisodeColor | ~3,500 | Links episodes to their colors |
+| EpisodeSubject | ~9,000 | Links episodes to their subjects |
+| EpisodeTool | ~500 | Links episodes to tools used |
+| EpisodeTechnique | ~500 | Links episodes to techniques applied |
+| ToolTechnique | ~20 | Maps tools to compatible techniques |
+
+---
 
 ## 🔍 Key Decisions
 
