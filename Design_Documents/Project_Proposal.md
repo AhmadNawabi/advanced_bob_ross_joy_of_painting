@@ -125,8 +125,8 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
 }
 
 🗃️ 5. Database Documentation (UML)
-```
-erDiagram
+```mermaid
+
     Episode ||--o{ EpisodeColor : contains
     Episode ||--o{ EpisodeSubject : features
     Episode ||--o{ EpisodeTool : uses
@@ -172,60 +172,70 @@ erDiagram
         TEXT description
         VARCHAR difficulty_level
     }
-    ```
+```
 
-    🔍 Key Decisions:
+## 🔍 Key Decisions
 
-Preserved original IDs (TL001, T003) for authenticity
-Junction tables for 5-way relational filtering
-No denormalization — full flexibility for future queries
+**Preserved original IDs (TL001, T003) for authenticity**  
+Maintained the original tool and technique identifiers from the source datasets to preserve Bob Ross's specific naming conventions and maintain data integrity.
 
-Key Sections:
+**Junction tables for 5-way relational filtering**  
+Implemented a normalized database schema with junction tables (EpisodeColor, EpisodeSubject, EpisodeTool, EpisodeTechnique) to enable flexible, multi-dimensional queries across all filtering categories.
 
-🎨 Filters Panel (Left)
-Multi-select dropdowns for:
-Month
-Color
-Subject
-Tool (NEW)
-Technique (NEW)
-Radio toggle: AND (all must match) / OR (any match)
-S1E1 search box
-“Generate Token” button (dev helper)
-📺 Episode Grid (Right)
-Cards with:
-Thumbnail (image_url)
-Title + S#E#
-Air date
-Color chips (hex-coded)
-Subject/Tool/Technique tags
-“▶ Watch on YouTube” link
-Mobile Responsiveness
-Collapsible filter panel
-Single-column episode cards
-Touch-friendly dropdowns
-WCAG 2.1 AA compliant (contrast ≥ 4.5:1)
-✅ 7. Success Metrics & QA Plan
-Criteria
-How We’ll Verify
-✅ DB loads 403 episodes
-SELECT COUNT(*) FROM Episode; → 403
-✅ All 5 datasets integrated
-SELECT COUNT(*) FROM Tool; → 12, FROM Technique; → 10
-✅ Auth works
-curl -H "Authorization: Bearer invalid" /episodes → 401
-✅ Pagination works
-?page=3&per_page=5 → max 5 results
-✅ AND/OR filtering
-S1E1 + S2E2 contain both Fan Brush & Happy Little Trees
-✅ Frontend loads locally
-python -m http.server 8080 → no CORS errors
-📋 Manual QA Checklist (to be run Day 5):
+**No denormalization — full flexibility for future queries**  
+Chose a fully normalized database structure to avoid data redundancy and ensure maximum flexibility for adding new features, complex queries, and analytical capabilities in the future.
 
-403 episodes loaded
-Token auth blocks unauthorized /episodes
-month=12&tool=Fan%20Brush&filter_type=AND returns winter forest scenes
-Mobile view works on iPhone/Android
-All YouTube/image links functional
-📜 License
-MIT — For educational use only.
+---
+
+## 🎨 6. Frontend Design & User Experience
+
+### Key Sections:
+
+#### 🎨 Filters Panel (Left)
+- **Multi-select dropdowns for**:
+  - Month
+  - Color
+  - Subject
+  - Tool (NEW)
+  - Technique (NEW)
+- **Radio toggle**: AND (all must match) / OR (any match)
+- **S1E1 search box**
+- **"Generate Token" button** (developer helper)
+
+#### 📺 Episode Grid (Right)
+**Cards with**:
+- Thumbnail (image_url)
+- Title + S#E#
+- Air date
+- Color chips (hex-coded)
+- Subject/Tool/Technique tags
+- "▶ Watch on YouTube" link
+
+#### Mobile Responsiveness
+- Collapsible filter panel
+- Single-column episode cards
+- Touch-friendly dropdowns
+- WCAG 2.1 AA compliant (contrast ≥ 4.5:1)
+
+---
+
+## ✅ 7. Success Metrics & QA Plan
+
+### Criteria & Verification
+
+| Criteria | How We'll Verify |
+|----------|------------------|
+| ✅ DB loads 403 episodes | `SELECT COUNT(*) FROM Episode;` → 403 |
+| ✅ All 5 datasets integrated | `SELECT COUNT(*) FROM Tool;` → 12, `FROM Technique;` → 10 |
+| ✅ Auth works | `curl -H "Authorization: Bearer invalid" /episodes` → 401 |
+| ✅ Pagination works | `?page=3&per_page=5` → max 5 results |
+| ✅ AND/OR filtering | S1E1 + S2E2 contain both Fan Brush & Happy Little Trees |
+| ✅ Frontend loads locally | `python -m http.server 8080` → no CORS errors |
+
+### 📋 Manual QA Checklist (to be run Day 5):
+
+- [ ] 403 episodes loaded
+- [ ] Token auth blocks unauthorized `/episodes`
+- [ ] `month=12&tool=Fan%20Brush&filter_type=AND` returns winter forest scenes
+- [ ] Mobile view works on iPhone/Android
+- [ ] All YouTube/image links functional
