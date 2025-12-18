@@ -159,9 +159,7 @@ Advanced_Bob_Ross_Joy_Of_Painting/
 │   └── bob_ross_techniques.csv.txt
 ├── Design Documents/
 │   ├── 01_Project_Proposal.md
-│   ├── 02_API_Documentation.md
-│   ├── 03_Database_Documentation.md
-│   └── 04_Wireframes_UI.md
+|
 ├── tests/test_pagination.py
 ├── requirements.txt
 ├── .env.example
@@ -333,4 +331,5 @@ print(generate_token("admin"))
 - ETL: verify all 5 datasets imported correctly
 
 ## 📜 License
+
 
