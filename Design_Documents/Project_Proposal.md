@@ -123,7 +123,7 @@ Bob Ross empowered people to create through accessible, joyful instruction. Our 
     "pages": 21
   }
 }
-
+```
 🗃️ 5. Database Documentation (UML)
 ```mermaid
 
